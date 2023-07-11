@@ -9,8 +9,8 @@
 <div class="container">
 
     @forelse ($task as $tasks)
-        <div>
-            <a href="{{ route('tasks.show', ['id' => $tasks->id]) }}"> {{ $tasks->title }} {{ $tasks->description }}</a>
+        <div style="margin-bottom:30px;">
+            <a href="{{ route('tasks.show', ['id' => $tasks->id]) }}"> {{ $tasks->title }} <br> {{ $tasks->description }} <br> {{ $tasks->long_description }}</a>
         </div>
     @empty
         <div>
