@@ -1,4 +1,4 @@
-@extends('Layouts.app');
+@extends('Layouts.app')
 
 @section('title', $task->title)
 
