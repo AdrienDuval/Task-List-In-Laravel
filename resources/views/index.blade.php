@@ -7,7 +7,7 @@
 
         @forelse ($tasks as $task)
             <div style="margin-bottom:30px;">
-                <a href="{{ route('tasks.show', ['id' => $task->id]) }}"> {{ $task->title }}</a>
+                <a href="{{ route('tasks.show', ['id' => $task->id]) }}"> {{ $task->title }}, <b>ID: {{ $task->id }}</b></a>
             </div>
         @empty
             <div>
