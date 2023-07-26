@@ -1,18 +1,18 @@
 @extends('Layouts.app')
 
-@section('title', ' Blade template')
+@section('title', 'All Tasks')
 
 @section('content')
-    <div>
-        <a href="{{ route('tasks.create') }}">Add Task</a>
-    </div>
+    <nav class="mb-10">
+        <a class="font-medium text-gray-700 underline decoration-pink-500" href="{{ route('tasks.create') }}">Add Task</a>
+    </nav>
 
-    <div class="container">
+    <div class="container-element">
 
         @forelse ($tasks as $task)
-            <div style="margin-bottom:30px;">
-                <a href="{{ route('tasks.show', ['task' => $task->id]) }}"> {{ $task->title }}, <b>ID:
-                        {{ $task->id }}</b></a>
+            <div>
+                <a href="{{ route('tasks.show', ['task' => $task->id]) }}"
+                    @class(['text-lg capitalize', 'line-through' => $task->completed])>{{ $task->title }}</a>
             </div>
         @empty
             <div>
@@ -21,7 +21,7 @@
         @endforelse
 
         @if ($tasks->count())
-            <nav>{{ $tasks->links() }}</nav>
+            <nav class="mb-4">{{ $tasks->links() }}</nav>
         @endif
 
     </div>

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laravel 10 Task List App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1><u>@yield('title')</u></h1>
+<body class="container mx-auto mt-10 mb-10 max-w-2xl">
+    <h1 class="text-2xl mb-4">@yield('title')</h1>
     @yield('styles')
     <div>
         @if (session()->has('success'))
