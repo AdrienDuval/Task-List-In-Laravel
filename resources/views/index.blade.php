@@ -3,6 +3,10 @@
 @section('title', ' Blade template')
 
 @section('content')
+    <div>
+        <a href="{{ route('tasks.create') }}">Add Task</a>
+    </div>
+
     <div class="container">
 
         @forelse ($tasks as $task)
